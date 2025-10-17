@@ -5,14 +5,26 @@
     {
       "action": "deny",
       "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
-      "remote-domains": ["gif.ski", "pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
-      "notes": "Block known C2 paste sites via VM - these are never legitimate"
+      "remote-domains": "gif.ski",
+      "notes": "Block gif.ski C2 site via VM"
+    },
+    {
+      "action": "deny", 
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": "pastebin.com",
+      "notes": "Block pastebin C2 site via VM"
     },
     {
       "action": "deny",
-      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_client_app",
-      "remote-domains": ["gif.ski", "pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
-      "notes": "Block known C2 paste sites via VM client"
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": "*.paste.ee",
+      "notes": "Block paste.ee C2 sites via VM"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": "*.hastebin.com", 
+      "notes": "Block hastebin C2 sites via VM"
     },
     {
       "action": "ask",
@@ -23,8 +35,8 @@
       "priority": "high"
     },
     {
-      "action": "ask", 
-      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd", 
       "ports": "5555",
       "protocol": "tcp",
       "notes": "Common backdoor port - investigate VM connection",
@@ -34,22 +46,22 @@
       "action": "ask",
       "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
       "ports": "31337",
-      "protocol": "tcp", 
+      "protocol": "tcp",
       "notes": "Leet backdoor port - investigate VM connection",
       "priority": "high"
     },
     {
       "action": "ask",
       "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
-      "remote-domains": ["*.tk", "*.ml", "*.ga", "*.cf", "*.gq"],
-      "notes": "Suspicious TLD via VM - often used for C2",
+      "remote-domains": "*.tk",
+      "notes": "Suspicious TLD .tk via VM - often used for C2",
       "priority": "high"
     },
     {
       "action": "ask",
       "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
-      "remote-domains": ["*.duckdns.org", "*.no-ip.com", "*.no-ip.org"],
-      "notes": "Dynamic DNS via VM - potential C2 infrastructure",
+      "remote-domains": "*.duckdns.org",
+      "notes": "Dynamic DNS via VM - potential C2 infrastructure", 
       "priority": "high"
     }
   ]

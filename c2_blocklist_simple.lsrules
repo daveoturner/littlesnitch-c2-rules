@@ -1,0 +1,21 @@
+{
+  "name": "C2 Blocklist Simple",
+  "description": "Simple blocklist for known C2 domains",
+  "denied-remote-domains": [
+    "gif.ski",
+    "pastebin.com", 
+    "*.paste.ee",
+    "*.hastebin.com",
+    "*.0x0.st",
+    "*.cobaltstrike.com",
+    "*.metasploit.com",
+    "*.tk",
+    "*.ml", 
+    "*.ga",
+    "*.cf",
+    "*.gq",
+    "*.duckdns.org",
+    "*.no-ip.com",
+    "*.no-ip.org"
+  ]
+}
