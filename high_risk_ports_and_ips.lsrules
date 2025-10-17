@@ -1,0 +1,58 @@
+{
+  "name": "High Risk Ports and IPs Block",
+  "description": "Blocks connections to commonly exploited ports and known malicious IP addresses",
+  "rules": [
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "3333",
+      "protocol": "tcp",
+      "notes": "Block eggdrop IRC bot port - commonly used for botnets"
+    },
+    {
+      "action": "deny",
+      "process": "any", 
+      "ports": "4444",
+      "protocol": "tcp",
+      "notes": "Block Metasploit default port - common C2 backdoor"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "7777",
+      "protocol": "tcp",
+      "notes": "Block common backdoor/trojan port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "8080", 
+      "protocol": "tcp",
+      "notes": "Block HTTP alternate port - often used for C2 and proxies"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "9999",
+      "protocol": "tcp", 
+      "notes": "Block common backdoor port used by various malware"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "14444",
+      "protocol": "tcp",
+      "notes": "Block high-numbered backdoor port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-addresses": "194.107.160.49",
+      "notes": "Block known malicious IP address",
+      "priority": "high"
+    }
+  ],
+  "denied-remote-addresses": [
+    "194.107.160.49"
+  ]
+}

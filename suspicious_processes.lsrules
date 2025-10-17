@@ -1,6 +1,6 @@
 {
   "name": "Suspicious Process Block",
-  "description": "Blocks network access for common pentesting and hacking tools",
+  "description": "Blocks network access for common pentesting and hacking tools plus high-risk ports",
   "rules": [
     {
       "action": "deny",
@@ -29,23 +29,58 @@
     {
       "action": "deny",
       "process": "any",
+      "ports": "3333",
+      "protocol": "tcp",
+      "notes": "Block eggdrop IRC bot port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
       "ports": "4444",
       "protocol": "tcp",
-      "notes": "Metasploit default port"
+      "notes": "Block Metasploit default port"
     },
     {
       "action": "deny",
       "process": "any",
       "ports": "5555",
       "protocol": "tcp",
-      "notes": "Common backdoor port"
+      "notes": "Block common backdoor port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "7777",
+      "protocol": "tcp",
+      "notes": "Block common backdoor/trojan port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "8080",
+      "protocol": "tcp", 
+      "notes": "Block HTTP alternate port - often used for C2"
+    },
+    {
+      "action": "deny", 
+      "process": "any",
+      "ports": "9999",
+      "protocol": "tcp",
+      "notes": "Block common backdoor port"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "ports": "14444",
+      "protocol": "tcp",
+      "notes": "Block high-numbered backdoor port"
     },
     {
       "action": "deny", 
       "process": "any",
       "ports": "31337",
       "protocol": "tcp",
-      "notes": "Elite/leet backdoor port"
+      "notes": "Block elite/leet backdoor port"
     }
   ]
 }
