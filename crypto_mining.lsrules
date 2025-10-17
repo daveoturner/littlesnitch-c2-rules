@@ -1,0 +1,18 @@
+{
+  "name": "Cryptocurrency Mining Block",
+  "description": "Blocks cryptocurrency mining pools used by cryptojacking malware",
+  "denied-remote-domains": [
+    "*.minergate.com",
+    "*.coinhive.com",
+    "*.crypto-loot.com",
+    "*.minexmr.com",
+    "*.nanopool.org",
+    "*.ethermine.org",
+    "*.f2pool.com",
+    "*.poolin.com",
+    "*.slushpool.com",
+    "*.antpool.com",
+    "*.nicehash.com",
+    "*.miningpoolhub.com"
+]
+}

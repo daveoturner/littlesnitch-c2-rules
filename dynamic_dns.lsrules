@@ -1,0 +1,16 @@
+{
+  "name": "Dynamic DNS Block",
+  "description": "Blocks Dynamic DNS services commonly used for C2 infrastructure",
+  "denied-remote-domains": [
+    "*.duckdns.org",
+    "*.no-ip.com",
+    "*.no-ip.org",
+    "*.ddns.net",
+    "*.zapto.org",
+    "*.servegame.com",
+    "*.dynu.net",
+    "*.afraid.org",
+    "*.changeip.com",
+    "*.ddnss.de"
+]
+}

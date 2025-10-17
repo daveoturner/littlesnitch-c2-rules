@@ -1,0 +1,45 @@
+{
+  "name": "Tor Network Block",
+  "description": "Blocks Tor network connections to prevent anonymous C2 channels",
+  "rules": [
+    {
+      "action": "deny",
+      "ports": "9001",
+      "protocol": "tcp",
+      "direction": "outgoing",
+      "notes": "Tor Directory Port"
+    },
+    {
+      "action": "deny",
+      "ports": "9030",
+      "protocol": "tcp",
+      "direction": "outgoing",
+      "notes": "Tor Authentication Port"
+    },
+    {
+      "action": "deny",
+      "ports": "9050",
+      "protocol": "tcp",
+      "direction": "outgoing",
+      "notes": "Tor SOCKS Port"
+    },
+    {
+      "action": "deny",
+      "ports": "9051",
+      "protocol": "tcp",
+      "direction": "outgoing",
+      "notes": "Tor Control Port"
+    },
+    {
+      "action": "deny",
+      "ports": "9150",
+      "protocol": "tcp",
+      "direction": "outgoing",
+      "notes": "Tor Browser SOCKS Port"
+    }
+  ],
+  "denied-remote-domains": [
+    "*.torproject.org",
+    "*.onion"
+  ]
+}

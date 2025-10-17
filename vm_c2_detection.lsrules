@@ -1,0 +1,48 @@
+{
+  "name": "VM C2 Detection and Blocking",
+  "description": "Detects C2 traffic hiding behind VM processes like Parallels",
+  "rules": [
+    {
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote": "any",
+      "ports": "any",
+      "protocol": "tcp",
+      "notes": "Monitor all Parallels NAT daemon connections - potential C2 tunnel",
+      "priority": "high"
+    },
+    {
+      "action": "ask", 
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_client_app",
+      "remote": "any",
+      "ports": "any",
+      "protocol": "tcp", 
+      "notes": "Monitor Parallels client connections - potential C2 tunnel",
+      "priority": "high"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": ["pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
+      "notes": "Block known C2 paste sites via Parallels"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_client_app", 
+      "remote-domains": ["pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
+      "notes": "Block known C2 paste sites via Parallels client"
+    },
+    {
+      "action": "ask",
+      "process": "any",
+      "remote-addresses": "66.198.8.145",
+      "notes": "Suspicious IP from your alert - investigate connections",
+      "priority": "high"
+    }
+  ],
+  "denied-remote-domains": [
+    "gif.ski",
+    "*.duckdns.org",
+    "*.no-ip.com"
+  ]
+}

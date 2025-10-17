@@ -1,0 +1,56 @@
+{
+  "name": "Smart VM C2 Detection",
+  "description": "Intelligent C2 detection for VM traffic - asks for suspicious patterns only",
+  "rules": [
+    {
+      "action": "deny",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": ["gif.ski", "pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
+      "notes": "Block known C2 paste sites via VM - these are never legitimate"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_client_app",
+      "remote-domains": ["gif.ski", "pastebin.com", "*.paste.ee", "*.hastebin.com", "*.0x0.st"],
+      "notes": "Block known C2 paste sites via VM client"
+    },
+    {
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "ports": "4444",
+      "protocol": "tcp",
+      "notes": "Metasploit default port - investigate VM connection",
+      "priority": "high"
+    },
+    {
+      "action": "ask", 
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "ports": "5555",
+      "protocol": "tcp",
+      "notes": "Common backdoor port - investigate VM connection",
+      "priority": "high"
+    },
+    {
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "ports": "31337",
+      "protocol": "tcp", 
+      "notes": "Leet backdoor port - investigate VM connection",
+      "priority": "high"
+    },
+    {
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": ["*.tk", "*.ml", "*.ga", "*.cf", "*.gq"],
+      "notes": "Suspicious TLD via VM - often used for C2",
+      "priority": "high"
+    },
+    {
+      "action": "ask",
+      "process": "/Applications/Parallels Desktop.app/Contents/MacOS/prl_naptd",
+      "remote-domains": ["*.duckdns.org", "*.no-ip.com", "*.no-ip.org"],
+      "notes": "Dynamic DNS via VM - potential C2 infrastructure",
+      "priority": "high"
+    }
+  ]
+}
