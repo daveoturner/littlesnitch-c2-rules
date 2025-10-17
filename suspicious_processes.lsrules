@@ -5,50 +5,46 @@
     {
       "action": "deny",
       "process": "/usr/bin/nc",
-      "direction": "outgoing",
       "remote": "any",
       "notes": "Block netcat"
     },
     {
       "action": "deny",
       "process": "/usr/local/bin/ncat",
-      "direction": "outgoing",
       "remote": "any",
       "notes": "Block ncat"
     },
     {
       "action": "deny",
       "process": "/usr/local/bin/socat",
-      "direction": "outgoing",
       "remote": "any",
       "notes": "Block socat"
     },
     {
       "action": "deny",
       "process": "/usr/bin/telnet",
-      "direction": "outgoing",
-      "remote": "any",
+      "remote": "any", 
       "notes": "Block telnet (use SSH instead)"
     },
     {
       "action": "deny",
+      "process": "any",
       "ports": "4444",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Metasploit default port"
     },
     {
       "action": "deny",
+      "process": "any",
       "ports": "5555",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Common backdoor port"
     },
     {
-      "action": "deny",
+      "action": "deny", 
+      "process": "any",
       "ports": "31337",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Elite/leet backdoor port"
     }
   ]

@@ -4,37 +4,37 @@
   "rules": [
     {
       "action": "deny",
+      "process": "any",
       "ports": "9001",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Tor Directory Port"
     },
     {
-      "action": "deny",
+      "action": "deny", 
+      "process": "any",
       "ports": "9030",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Tor Authentication Port"
     },
     {
       "action": "deny",
+      "process": "any",
       "ports": "9050",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Tor SOCKS Port"
     },
     {
       "action": "deny",
+      "process": "any",
       "ports": "9051",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Tor Control Port"
     },
     {
       "action": "deny",
+      "process": "any",
       "ports": "9150",
       "protocol": "tcp",
-      "direction": "outgoing",
       "notes": "Tor Browser SOCKS Port"
     }
   ],

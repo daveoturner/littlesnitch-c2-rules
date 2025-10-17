@@ -4,7 +4,7 @@
   "denied-remote-domains": [
     "*.cobaltstrike.com",
     "*.metasploit.com",
-    "*.exploit-db.com",
+    "*.exploit-db.com", 
     "*.rapid7.com",
     "*.tk",
     "*.ml",
@@ -15,5 +15,5 @@
     "*.paste.ee",
     "*.ghostbin.com",
     "*.hastebin.com"
-]
+  ]
 }
