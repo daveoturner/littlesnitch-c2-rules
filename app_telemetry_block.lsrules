@@ -1,0 +1,127 @@
+{
+  "name": "Application Telemetry Block", 
+  "description": "Blocks telemetry and analytics from third-party applications while preserving functionality",
+  "rules": [
+    {
+      "action": "deny",
+      "process": "/Applications/Adobe*",
+      "remote-domains": "*.omniture.com",
+      "notes": "Block Adobe Analytics (Omniture)"
+    },
+    {
+      "action": "deny", 
+      "process": "/Applications/Adobe*",
+      "remote-domains": "*.adobe.io",
+      "notes": "Block Adobe Experience Cloud telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Adobe*", 
+      "remote-domains": "*.demdex.net",
+      "notes": "Block Adobe Audience Manager telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Adobe*",
+      "remote-domains": "cc-api-data.adobe.io",
+      "notes": "Block Creative Cloud analytics"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Microsoft*",
+      "remote-domains": "*.office.net",
+      "notes": "Block Microsoft Office telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Microsoft*",
+      "remote-domains": "telemetry.microsoft.com",
+      "notes": "Block Microsoft telemetry service"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Microsoft*",
+      "remote-domains": "*.events.data.microsoft.com",
+      "notes": "Block Microsoft events telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/zoom.us.app*",
+      "remote-domains": "*.zoom.us",
+      "ports": "80,443",
+      "notes": "Block Zoom telemetry (preserve video calls on specific ports)"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/zoom.us.app*", 
+      "remote-domains": "logfiles.zoom.us",
+      "notes": "Block Zoom log file uploads"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Google Chrome.app*",
+      "remote-domains": "*.google-analytics.com",
+      "notes": "Block Google Analytics from Chrome"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Google Chrome.app*",
+      "remote-domains": "*.googletagmanager.com", 
+      "notes": "Block Google Tag Manager"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Google Chrome.app*",
+      "remote-domains": "safebrowsing.googleapis.com",
+      "notes": "Block Chrome safe browsing telemetry (security trade-off)"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Firefox.app*",
+      "remote-domains": "*.mozilla.org",
+      "notes": "Block Firefox telemetry (preserve updates on specific domains)"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Visual Studio Code.app*",
+      "remote-domains": "*.visualstudio.com",
+      "notes": "Block VS Code telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Visual Studio Code.app*",
+      "remote-domains": "dc.services.visualstudio.com",
+      "notes": "Block VS Code data collection service"
+    },
+    {
+      "action": "deny",
+      "process": "/usr/local/bin/npm",
+      "remote-domains": "*.npmjs.org",
+      "notes": "Block npm telemetry (preserve package downloads)"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Slack.app*",
+      "remote-domains": "*.slack-edge.com",
+      "notes": "Block Slack analytics endpoints"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Discord.app*", 
+      "remote-domains": "*.discordapp.com",
+      "notes": "Block Discord analytics"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Spotify.app*",
+      "remote-domains": "*.spotify.com",
+      "notes": "Block Spotify analytics (preserve music streaming)"
+    },
+    {
+      "action": "deny",
+      "process": "/Applications/Dropbox.app*",
+      "remote-domains": "*.dropboxapi.com",
+      "notes": "Block Dropbox analytics APIs"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "name": "System Telemetry Block",
+  "description": "Comprehensive blocking of macOS system telemetry and analytics while preserving security updates",
+  "rules": [
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.apple-analytics.com",
+      "notes": "Block Apple Analytics telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "any", 
+      "remote-domains": "metrics.apple.com",
+      "notes": "Block Apple metrics collection"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "metrics.icloud.com", 
+      "notes": "Block iCloud metrics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "diagassets.apple.com",
+      "notes": "Block diagnostic asset downloads"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "xp.apple.com",
+      "notes": "Block Apple experience program telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "supportmetrics.apple.com",
+      "notes": "Block Apple support metrics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.icloud-diagnostics.com",
+      "notes": "Block iCloud diagnostic data"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "telemetry.apple.com",
+      "notes": "Block Apple telemetry service"
+    },
+    {
+      "action": "deny",
+      "process": "/System/Library/PrivateFrameworks/TelemetryUtilities.framework/Support/telemetryutilities",
+      "remote": "any",
+      "notes": "Block telemetry utilities daemon"
+    },
+    {
+      "action": "deny",
+      "process": "/usr/libexec/trustd",
+      "remote-domains": "*.apple-dns.net",
+      "notes": "Block trust daemon telemetry (preserve OCSP)"
+    },
+    {
+      "action": "deny",
+      "process": "/System/Library/CoreServices/ReportCrash",
+      "remote": "any",
+      "notes": "Block crash report transmission"
+    },
+    {
+      "action": "deny",
+      "process": "/usr/libexec/symptomsd",
+      "remote": "any",
+      "notes": "Block system symptom reporting"
+    },
+    {
+      "action": "deny",
+      "process": "/System/Library/PrivateFrameworks/Suggestions.framework/Support/suggestionsd",
+      "remote": "any",
+      "notes": "Block Siri suggestions telemetry"
+    },
+    {
+      "action": "deny",
+      "process": "/usr/libexec/UsageTrackingAgent",
+      "remote": "any",
+      "notes": "Block usage tracking agent"
+    }
+  ]
+}

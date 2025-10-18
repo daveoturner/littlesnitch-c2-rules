@@ -1,0 +1,156 @@
+{
+  "name": "Advertising & Tracking Block",
+  "description": "Comprehensive blocking of advertising networks, tracking pixels, and behavioral analytics",
+  "rules": [
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.google-analytics.com",
+      "notes": "Block Google Analytics universal"
+    },
+    {
+      "action": "deny", 
+      "process": "any",
+      "remote-domains": "*.googletagmanager.com",
+      "notes": "Block Google Tag Manager"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.doubleclick.net",
+      "notes": "Block DoubleClick advertising network"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.googlesyndication.com",
+      "notes": "Block Google AdSense"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.facebook.com",
+      "notes": "Block Facebook tracking (preserve messenger on specific ports)"
+    },
+    {
+      "action": "deny",
+      "process": "any", 
+      "remote-domains": "*.fbcdn.net",
+      "notes": "Block Facebook content delivery tracking"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "connect.facebook.net", 
+      "notes": "Block Facebook Pixel tracking"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.twitter.com",
+      "notes": "Block Twitter analytics and tracking"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.twimg.com",
+      "notes": "Block Twitter image tracking pixels"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "analytics.twitter.com",
+      "notes": "Block Twitter analytics service"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.amazon-adsystem.com",
+      "notes": "Block Amazon advertising system"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.amazonaws.com",
+      "notes": "Block AWS analytics beacons (broad - may need refinement)"
+    },
+    {
+      "action": "deny",
+      "process": "any", 
+      "remote-domains": "*.hotjar.com",
+      "notes": "Block Hotjar user behavior analytics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.mixpanel.com", 
+      "notes": "Block Mixpanel analytics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.segment.com",
+      "notes": "Block Segment customer data platform"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.amplitude.com",
+      "notes": "Block Amplitude product analytics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.fullstory.com",
+      "notes": "Block FullStory session recording"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.logrocket.com",
+      "notes": "Block LogRocket session replay"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.bugsnag.com",
+      "notes": "Block Bugsnag error tracking telemetry"
+    },
+    {
+      "action": "deny", 
+      "process": "any",
+      "remote-domains": "*.sentry.io",
+      "notes": "Block Sentry error monitoring"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.newrelic.com",
+      "notes": "Block New Relic application monitoring"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.pingdom.net", 
+      "notes": "Block Pingdom website monitoring beacons"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.clarity.ms",
+      "notes": "Block Microsoft Clarity behavioral analytics"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.jsdelivr.net",
+      "notes": "Block CDN analytics (may affect some legitimate services)"
+    },
+    {
+      "action": "deny",
+      "process": "any",
+      "remote-domains": "*.unpkg.com",
+      "notes": "Block npm CDN analytics"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "Security Updates Allow",
+  "description": "Allows critical security updates while blocking telemetry - essential for maintaining security",
+  "rules": [
+    {
+      "action": "allow",
+      "process": "/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Support/softwareupdated",
+      "remote-domains": "swscan.apple.com",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow macOS security update scanning"
+    },
+    {
+      "action": "allow",
+      "process": "/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Support/softwareupdated", 
+      "remote-domains": "swcdn.apple.com",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow macOS security update downloads"
+    },
+    {
+      "action": "allow",
+      "process": "/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Support/softwareupdated",
+      "remote-domains": "swdist.apple.com", 
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow macOS update distribution"
+    },
+    {
+      "action": "allow",
+      "process": "/System/Library/PrivateFrameworks/SoftwareUpdate.framework/Support/softwareupdated",
+      "remote-domains": "updates-http.cdn-apple.com",
+      "protocol": "tcp", 
+      "ports": "80,443",
+      "notes": "Allow Apple CDN security updates"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/libexec/trustd",
+      "remote-domains": "ocsp.apple.com",
+      "protocol": "tcp",
+      "ports": "443", 
+      "notes": "Allow certificate revocation checking (OCSP)"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/libexec/trustd",
+      "remote-domains": "crl.apple.com",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow certificate revocation lists"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/Little Snitch.app/Contents/MacOS/Little Snitch",
+      "remote-domains": "*.obdev.at",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Little Snitch security updates"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "remote-domains": "update.googleapis.com",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Chrome security updates only"
+    },
+    {
+      "action": "allow", 
+      "process": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "remote-domains": "dl.google.com",
+      "protocol": "tcp",
+      "ports": "443", 
+      "notes": "Allow Chrome security patch downloads"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/Firefox.app/Contents/MacOS/firefox",
+      "remote-domains": "aus5.mozilla.org",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Firefox security updates"
+    },
+    {
+      "action": "allow",
+      "process": "/Applications/Firefox.app/Contents/MacOS/firefox",
+      "remote-domains": "download.mozilla.org", 
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Firefox security patches"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/local/bin/brew",
+      "remote-domains": "formulae.brew.sh",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Homebrew security updates"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/local/bin/brew",
+      "remote-domains": "github.com", 
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Homebrew formula updates from GitHub"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/local/bin/docker",
+      "remote-domains": "registry-1.docker.io",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Docker security image pulls"
+    },
+    {
+      "action": "allow",
+      "process": "/usr/local/bin/docker",
+      "remote-domains": "auth.docker.io",
+      "protocol": "tcp", 
+      "ports": "443",
+      "notes": "Allow Docker authentication for security updates"
+    },
+    {
+      "action": "allow",
+      "process": "/System/Library/PrivateFrameworks/MobileDevice.framework/Support/XcodeDeviceMonitor",
+      "remote-domains": "developerservices2.apple.com",
+      "protocol": "tcp",
+      "ports": "443",
+      "notes": "Allow Xcode security certificate updates"
+    }
+  ]
+}
