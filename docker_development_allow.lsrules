@@ -1,0 +1,48 @@
+{
+  "name": "Docker Development Allow",
+  "description": "Allow legitimate Docker development connections - registries, CDNs, telemetry",
+  "rules": [
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "docker.io",
+      "notes": "Allow Docker Hub registry access for container pulls"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "docker.com",
+      "notes": "Allow Docker Desktop updates and services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "cloudflarestorage.com",
+      "notes": "Allow Docker image storage via Cloudflare R2 CDN"
+    },
+    {
+      "action": "allow", 
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "fastly.net",
+      "notes": "Allow Docker registry CDN via Fastly"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "npmjs.org",
+      "notes": "Allow npm registry access for Node.js container builds"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "bugsnag.com",
+      "notes": "Allow Docker error reporting - development telemetry"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.9BNSXJN65R/com.docker.docker",
+      "remote-domains": "segment.io", 
+      "notes": "Allow Docker analytics - development telemetry"
+    }
+  ]
+}

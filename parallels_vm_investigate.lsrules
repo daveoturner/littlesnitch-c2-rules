@@ -1,0 +1,24 @@
+{
+  "name": "Parallels VM Investigate", 
+  "description": "Monitor suspicious VM traffic for security analysis - set to ASK for investigation",
+  "rules": [
+    {
+      "action": "ask",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "napps-1.com",
+      "notes": "INVESTIGATE: Unknown download service - monitor for malware"
+    },
+    {
+      "action": "ask",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console", 
+      "remote-domains": "nelreports.net",
+      "notes": "INVESTIGATE: Unknown reporting service - potential telemetry/malware"
+    },
+    {
+      "action": "ask",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-ips": "any",
+      "notes": "INVESTIGATE: VM direct IP connections - could indicate malware C2"
+    }
+  ]
+}

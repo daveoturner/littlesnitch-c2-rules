@@ -1,0 +1,96 @@
+{
+  "name": "Parallels VM Allow",
+  "description": "Allow legitimate Windows VM traffic for Telegram, Zoom, and browsing",
+  "rules": [
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "googleapis.com",
+      "notes": "Allow VM browser updates (Chrome/Edge security updates)"
+    },
+    {
+      "action": "allow", 
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "msedge.net",
+      "notes": "Allow Microsoft Edge telemetry and updates"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "office.com", 
+      "notes": "Allow Microsoft Office services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "live.com",
+      "notes": "Allow OneDrive and Microsoft services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "bing.com",
+      "notes": "Allow Bing search engine access"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console", 
+      "remote-domains": "msn.com",
+      "notes": "Allow MSN news and content services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "skype.com",
+      "notes": "Allow Skype configuration and services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "brave.com",
+      "notes": "Allow Brave browser updates and services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "ublockorigin.pages.dev", 
+      "notes": "Allow uBlock Origin ad blocker filter updates"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "reincubate.com",
+      "notes": "Allow Camo webcam software updates and services"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console", 
+      "remote-domains": "ayugram.one",
+      "notes": "Allow AyuGram Telegram client updates"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "adtidy.org",
+      "notes": "Allow AdGuard/AdTidy ad filtering service"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "soundcloud.com", 
+      "notes": "Allow SoundCloud music streaming API"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "nordcdn.com",
+      "notes": "Allow NordVPN CDN access (if NordVPN installed in VM)"
+    },
+    {
+      "action": "allow",
+      "process": "identifier.4C6364ACXT/com.parallels.desktop.console",
+      "remote-domains": "img-s-msn-com.akamaized.net",
+      "notes": "Allow MSN image content delivery"
+    }
+  ]
+}
